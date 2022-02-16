@@ -1,0 +1,92 @@
+{
+  "rules": {
+    "semicolon": [true, "always"],
+
+    // TS characteristics
+    "member-access": false, //  Set access to members objects (public, private, protect)
+    "member-ordering": [//  Set the modifier order
+      false,
+      {
+        "order": [
+          "public-static-field",
+          "public-static-method",
+          "protected-static-field",
+          "protected-static-method",
+          "private-static-field",
+          "private-static-method",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "no-empty-interface":true,//  No air interfaces are not allowed
+    "no-parameter-reassignment":true,//  Do not allow modification methods to enter parameters
+    "prefer-for-of":true,//  If there is no index in the for loop, it is recommended to use for-of
+
+    //  Features
+    "await-promise":true,//  No Promise is not allowed to use AWAIT
+    "curly":true,//  IF / for / do / while force to use braces
+    "forin":true,//  Forced HasownProperty check when using for in statement
+    "no-arg":true,//  Arguments.callee is not allowed
+    //  "no-bitwise": true, // Does not allow special operators &, & =, |, =, ^, ^ =, <<, << =, >>, >> =, >>>,> >> =, ~
+    "no-conditional-assignment":true,//  DO while / for / if / while statement will check, for example, if (a = b) is checked
+    //  "no-console": true, // does not allow use of console objects
+    "no-debugger":true,//  DEBUGER is not allowed
+    "no-duplicate-super":true,//  Do not allow SUPER () in the constructor twice
+    "no-empty":false,//  The function body is not allowed
+    "no-eval":true,//  Eval is not allowed
+    "no-for-in-array":true,//  Do not allow Array to use for-in
+    "no-invalid-template-strings":true,//  Allows to use $ {in a template string
+    "no-invalid-this":true,//  Do not allow this to use this outside of CLASS
+    "no-null-keyword":true,//  NULL is not allowed, using undefined instead of null, refers to empty pointer
+    "no-sparse-arrays":true,//  Do not allow an empty element in Array
+    "no-string-throw":true,//  THROW a string is not allowed
+    "no-switch-case-fall-through":true,//  Do not allow Case paragraphs in the case where Breack is not used, in the new CASE logic
+    "no-unsafe-finally":true,//  Return / Continue / Break / throw is not allowed in a Finally statement
+    "no-unused-expression":true,//  Unused expressions are not allowed
+    "no-use-before-declare":true,//  Before using
+    "no-var-keyword":true,//  Do not allow VAR
+    "radix":true,//  When Parseint, you must enter the RADIX precision parameters.
+    "restrict-plus-operands":true,//  Automatic type conversion is not allowed, if you have set it is not allowed to use keyword VAR this setting is invalid
+    "triple-equals":true,//  Needless equal sign, equal to comparison
+    "use-isnan":true,//  Only use the ISNAN method to check if the number is valid
+
+    //  Maintenance function
+    "indent":[true, "spaces", 4],//  Every line begins with 4 spaces
+    "linebreak-style":[false,"CR/LF"],//  Line-winning format CR / LF can be used in Windows and OSX
+    "max-classes-per-file":[true,1],//  Number of numbers in each file
+    "max-file-line-count":[true,500],//  Define the number of lines of each file
+    "max-line-length":[false,120],//  Define the number of code per line
+    "no-default-export":true,//  It is forbidden to use the Export Default keyword, because when the Export object name changes, you need to modify the object name in the Import. Https://github.com/palantir/tslint/issues/1182#issue-151780453
+    "no-duplicate-imports":true,//  It is forbidden to reference the same module multiple times in one file.
+
+    //  format
+    "align":[false,"parameters","arguments","statements","members","elements"],//  Define alignment style
+    "array-type":[true,"array"],//  It is recommended to use a T [] method to declare an array object
+    "class-name":false,//  Class name named in large peak format
+    "comment-format":[true, "check-space"],//  Define annotation format
+    "encoding":true,//  Define encoding format default UTF-8
+    "import-spacing":true,//  IMPORT keywords, plus spaces
+    "interface-name":[true,"always-prefix"],//  Interface must start with i
+    "jsdoc-format":true,//  Notes based on JSDOC style
+    "new-parens":true,//  Need to use parentheses when calling constructor
+    "no-consecutive-blank-lines":[true,2],//  Not allowed to have a space
+    "no-trailing-whitespace": [//  Space is not allowed
+      false,
+      "ignore-comments",
+      "ignore-jsdoc"
+    ],
+    "no-unnecessary-initializer":true,//  No need to initialize
+    "variable-name":[true,"check-format",//  Define variable naming rules
+      "allow-leading-underscore",
+      "allow-trailing-underscore",
+      "ban-keywords"]
+  }
+}
