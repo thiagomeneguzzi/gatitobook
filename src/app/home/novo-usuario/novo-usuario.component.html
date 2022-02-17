@@ -1,0 +1,24 @@
+<h4 class="text-center">Registre-se e mostre seu pet ao mundo!</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+
+  <div class="form-group">
+    <input placeholder="e-mail" formControlName="email" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input placeholder="Nome completo" formControlName="fullName" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input placeholder="Usuário" formControlName="userName" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <input placeholder="Senha" formControlName="password" type="password" class="form-control">
+  </div>
+
+  <button class="btn btn-primary btn-block">Cadastrar</button>
+</form>
+
+<p>Já é um usuário? <a [routerLink]="['']">Faça login</a></p>
