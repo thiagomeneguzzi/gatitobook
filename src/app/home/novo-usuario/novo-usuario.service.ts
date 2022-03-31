@@ -14,4 +14,8 @@ export class NovoUsuarioService {
     return this.http.post(`${environment.apiUrl}/user/signup`, novoUsuario);
   }
 
+  verificaUsuarioExistente(nomeUsuario: string) {
+    return this.http.get(`${environment.apiUrl}/user/exists/${nomeUsuario}`);
+  }
+
 }

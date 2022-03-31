@@ -3,19 +3,52 @@
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
 
   <div class="form-group">
-    <input placeholder="e-mail" formControlName="email" class="form-control">
+    <input placeholder="E-mail" formControlName="email" class="form-control">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] &&
+      novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-mail obrigatório"></app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] &&
+      novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="Digite um e-mail válido!"></app-mensagem>
   </div>
 
   <div class="form-group">
     <input placeholder="Nome completo" formControlName="fullName" class="form-control">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('fullName')?.errors?.['required'] &&
+      novoUsuarioForm.get('fullName')?.touched
+      "
+      mensagem="Nome completo é obrigatório!"></app-mensagem>
   </div>
 
   <div class="form-group">
     <input placeholder="Usuário" formControlName="userName" class="form-control">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.['minusculo'] &&
+      novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Usuário somente pode ter caracteres minúsculos!"></app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.['required'] &&
+      novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Usuário é obrigatório!"></app-mensagem>
   </div>
 
   <div class="form-group">
     <input placeholder="Senha" formControlName="password" type="password" class="form-control">
+    <app-mensagem
+      *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] &&
+      novoUsuarioForm.get('password')?.touched
+      "
+      mensagem="Senha é obrigatória!"></app-mensagem>
+    <app-mensagem
+      *ngIf="novoUsuarioForm.errors?.['senhaIgualUsuario']"
+      mensagem="Senha deve ser diferente do usuário!"></app-mensagem>
   </div>
 
   <button class="btn btn-primary btn-block">Cadastrar</button>
