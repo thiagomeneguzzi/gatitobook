@@ -8,3 +8,5 @@ export interface Animal {
   comments: number;
   userId: number;
 }
+
+export type Animais = Array<Animal>;
