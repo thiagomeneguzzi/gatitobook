@@ -18,13 +18,6 @@ export class ListaAnimaisComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.usuarioService.retornaUsuario().subscribe((usuario: any) => {
-    //   const userName = usuario.name ?? '';
-    //   this.animaisService.listaDoUsuario(userName).subscribe((animais) => {
-    //     this.animais = animais
-    //   })
-    // })
-
     this.animais$ = this.usuarioService.retornaUsuario().pipe(
       switchMap((usuario: any) => {
         const userName = usuario.name ?? '';
