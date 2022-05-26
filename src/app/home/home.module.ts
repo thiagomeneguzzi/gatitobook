@@ -19,7 +19,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     HomeComponent
